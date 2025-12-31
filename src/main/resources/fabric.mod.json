@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "zautofeed",
+  "version": "${version}",
+
+  "name": "zAutoFeed",
+  "description": "Automatically runs /cmi feed every 200 seconds. Toggleable via keybind.",
+  "authors": ["zPleum"],
+  "icon": "assets/zautofeed/icon.png",
+  "contact": {
+    "homepage": "https://www.zpleum.site/",
+    "sources": "https://github.zpleum.site/",
+    "facebook": "https://facebook.zpleum.site/",
+    "discord": "https://discord.zpleum.site/"
+  },
+
+  "license": "MIT",
+
+  "environment": "client",
+  "entrypoints": {
+    "client": ["me.zpleum.zautofeed.client.ZautofeedClient"]
+  },
+
+  "mixins": [
+    "zautofeed.mixins.json"
+    ,{
+      "config": "zautofeed.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
